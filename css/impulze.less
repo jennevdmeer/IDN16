@@ -1,4 +1,4 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600,700,800);
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,700);
 
 @primary: #cd0a0a;
 
@@ -11,24 +11,22 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
-h2 {
+h1 {
+	font-family: 'Open Sans Condensed';
+	font-size: 3em;
+	margin: 0;
+	padding: 20px 0;
 	color: @primary;
+
+	small {
+		font-family: 'Open Sans', sans-serif;
+		display: block;
+		font-size: 0.4em;
+	}
 }
 
-header {
-	h1 {
-		font-family: 'Open Sans Condensed';
-		font-size: 3em;
-		margin: 0;
-		padding: 20px 0;
-		color: @primary;
-
-		small {
-			font-family: 'Open Sans', sans-serif;
-			display: block;
-			font-size: 0.4em;
-		}
-	}
+h2 {
+	color: @primary;
 }
 
 main {
@@ -111,7 +109,7 @@ ul.tools {
 		margin: 2px;
 		background-color: #eee;
 		color: black;
-	display: inline-block;
+		display: inline-block;
 		font-weight: bold;
 	}
 
@@ -131,6 +129,6 @@ ul.tools {
 }
 
 // some default bootstrap adjustments
-.navbar {
-	border-radius: 0;
-}
+//.navbar {
+//	border-radius: 0;
+//}
