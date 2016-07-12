@@ -1,0 +1,109 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600,700,800);
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #666;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+h2 {
+  color: #cd0a0a;
+}
+header h1 {
+  font-family: 'Open Sans Condensed';
+  font-size: 3em;
+  margin: 0;
+  padding: 20px 0;
+  color: #cd0a0a;
+}
+header h1 small {
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  font-size: 0.4em;
+}
+main section .container {
+  padding-bottom: 15px;
+}
+main section.whoami,
+main section.contact {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+main section.whoami a,
+main section.contact a {
+  color: black;
+  text-decoration: underline;
+}
+main section.whoami a:hover,
+main section.contact a:hover {
+  text-decoration: none;
+}
+main section mark {
+  background-color: transparent !important;
+  color: black;
+}
+main section.whoami small {
+  display: block;
+  color: #eee;
+}
+main section.whatido {
+  margin-top: 20px;
+}
+p {
+  text-align: justify;
+}
+div.bg {
+  padding: 300px 0;
+}
+div.bg.microhair {
+  background: #200E0A;
+  background-image: url('../images/microhair.jpg');
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+div.bg.futurebodies {
+  background: #84919A;
+  background-image: url('../images/futurebodies.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+ul.tools {
+  padding: 0;
+}
+ul.tools::before {
+  content: "TECHNIQUES/SOFTWARE";
+  font-weight: 800;
+  padding: 5px;
+  margin: 2px;
+  background-color: #cd0a0a;
+  color: white;
+}
+ul.tools li {
+  padding: 5px;
+  margin: 2px;
+  background-color: #eee;
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+}
+ul.tools ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+ul.tools ul li {
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 0 3px;
+  font-size: 0.75em;
+  border-left: thin solid #cd0a0a;
+}
+.navbar {
+  border-radius: 0;
+}

@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+compilerconfig.json
+*.defaults
+Web.config
