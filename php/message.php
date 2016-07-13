@@ -1,4 +1,7 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', 'on');
+
 	$error = [];
 
 	// get data from json post if existing or normal post incase of JS failure
@@ -6,6 +9,7 @@
 	$data = array_map('trim', $data); // trim all values
 
 	// do serverside validation
+	// name things
 	if (!isset($data['name']) || empty($data['name']) || strlen($data['name']) <= 1) {
 		$error['name'] = 'You forgot to enter your name!';
 	}
@@ -20,7 +24,7 @@
 	}
 
 	// message things
-	if (!isset($data['message']) || empty(trim($data['message']))) {
+	if (!isset($data['message']) || empty($data['message'])) {
 		$error['message'] = 'You forgot to enter a message.';
 	} else {
 		if (strlen($data['message']) < 25) {
@@ -29,7 +33,7 @@
 	}
 
 	// if we have no errors send me the email!
-	if (!$error) {
+	if (count($error) === 0) {
 		$mailformat = vsprintf('name: %1$s\r\nemail: <a href="mailto:%2$s">%2$s</a>\r\nmessage:\r\n%3$s', $data);
 		mail("jennevdmeer@impulze.net", ' idn — ' . $data['name'], $mailformat);
 	}
@@ -37,7 +41,7 @@
 	if (isset($_POST['json'])) {
 		// send back some data
 		header('Content-type: application/json');
-		echo json_encode([ 'error' => $error ]);
+		echo json_encode(['error' => $error]);
 	} else {
 		header('Location: /2016/');
 	}

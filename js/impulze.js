@@ -8,7 +8,7 @@
 	$form.on("submit", function (event) {
 		event.preventDefault();
 
-		$submit.prop("class", "btn btn-warning").prop("disabled", true);
+		$submit.prop("class", "btn btn-warning").prop("disabled", true).html("Attempting to send your message!");
 
 		$.post("php/message.php", {
 			json: true,
