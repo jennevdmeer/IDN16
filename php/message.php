@@ -34,7 +34,11 @@
 		mail("jennevdmeer@impulze.net", ' idn — ' . $data['name'], $mailformat);
 	}
 
-	// send back some data
-	header('Content-type: application/json');
-	echo json_encode([ 'error' => $error ]);
+	if (isset($_POST['json'])) {
+		// send back some data
+		header('Content-type: application/json');
+		echo json_encode([ 'error' => $error ]);
+	} else {
+		header('Location: /2016/');
+	}
 ?>
