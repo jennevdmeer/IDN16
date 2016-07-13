@@ -34,8 +34,15 @@
 
 	// if we have no errors send me the email!
 	if (count($error) === 0) {
-		$mailformat = vsprintf('name: %1$s\r\nemail: <a href="mailto:%2$s">%2$s</a>\r\nmessage:\r\n%3$s', $data);
-		mail("jennevdmeer@impulze.net", ' idn — ' . $data['name'], $mailformat);
+		$mailformat = vsprintf("name: %1\$s<br/>\r\nemail: <a href=\"mailto:%2\$s\">%2\$s</a><br/>\r\nmessage:<br/>\r\n%3\$s", $data);
+		$headers = [
+			vsprintf("From: %1\$s <%2\$s>", $data),
+			vsprintf("Reply-To: %2\$s", $data),
+			"X-Mailer: PHP/" . phpversion(),
+			"MIME-Version: 1.0",
+			"Content-type: text/html; charset=iso-8859-1",
+		];
+		mail('jennevdmeer@impulze.net', 'idn — ' . $data['name'], $mailformat, implode($headers,"\r\n"));
 	}
 
 	if (isset($_POST['json'])) {

@@ -29,6 +29,8 @@
 			setTimeout(function () {
 				$submit.prop("class", "btn btn-default").prop("disabled", false).html("Send message");
 			}, 5000);
+		}).error(function(data){
+			console.log(data);
 		});
 	});
 });
